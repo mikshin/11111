@@ -1,0 +1,47 @@
+{
+  "allowJs": true,
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "target": "es5",
+    "baseUrl": ".",
+    "allowJs": true,
+    "strict": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@UI/*": [
+        "./src/components/UI/*"
+      ],
+      "@views/*": [
+        "./src/views/*"
+      ],
+      "@widgets/*": [
+        "./src/components/widgets/*"
+      ],
+      "@utils": [
+        "./src/assets/scripts/scripts.js"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@pagesLayouts/*": [
+        "./src/components/UI/page/*"
+      ],
+      "@plugins/*": [
+        "./src/plugins/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

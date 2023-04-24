@@ -1,0 +1,565 @@
+@import './var.scss';
+@import './icon.scss';
+@import './btn.scss';
+@import './scrollbar.scss';
+@import './animation.scss';
+
+.#{$namespace}-datepicker {
+  display: inline-block;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+}
+
+.#{$namespace}-datepicker-range {
+  width: 320px;
+}
+
+.#{$namespace}-datepicker-inline {
+  width: auto;
+}
+
+.#{$namespace}-input-wrapper {
+  .#{$namespace}-icon-clear {
+    display: none;
+  }
+
+  &:hover {
+    .#{$namespace}-icon-clear {
+      // display: block;
+    }
+
+    .#{$namespace}-icon-clear+.#{$namespace}-icon-calendar {
+      // display: none;
+    }
+  }
+}
+
+.#{$namespace}-input {
+  display: none;
+}
+
+.#{$namespace}-icon-calendar,
+.#{$namespace}-icon-clear {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  // transform: translateY(-50%);
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}
+
+.#{$namespace}-icon-clear {
+  cursor: pointer;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.#{$namespace}-icon-calendar {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='20' viewBox='0 0 18 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 2H15V0H13V2H5V0H3V2H2C0.89 2 0.00999999 2.9 0.00999999 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM16 18H2V8H16V18ZM6 12H4V10H6V12ZM10 12H8V10H10V12ZM14 12H12V10H14V12ZM6 16H4V14H6V16ZM10 16H8V14H10V16ZM14 16H12V14H14V16Z' fill='%23A5B2BA'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  svg {
+    display: none;
+  }
+}
+
+.#{$namespace}-datepicker-main {
+  font: 14px/1.5 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
+  color: $default-color;
+  background-color: #fff;
+  border: 1px solid $border-color;
+  transform: translateY(56px);
+}
+
+.#{$namespace}-datepicker-popup {
+  position: absolute;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  z-index: $popup-z-index;
+}
+
+.#{$namespace}-datepicker-sidebar {
+  float: left;
+  box-sizing: border-box;
+  width: $sidebar-margin-left;
+  padding: 6px;
+  overflow: auto;
+}
+
+.#{$namespace}-datepicker-sidebar+.#{$namespace}-datepicker-content {
+  margin-left: $sidebar-margin-left;
+  border-left: 1px solid $border-color;
+}
+
+.#{$namespace}-datepicker-body {
+  position: relative;
+  user-select: none;
+}
+
+.#{$namespace}-btn-shortcut {
+  display: block;
+  padding: 0 6px;
+  line-height: 24px;
+}
+
+.#{$namespace}-range-wrapper {
+  display: flex;
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+.#{$namespace}-datepicker-header {
+  padding: 6px 8px;
+  border-bottom: 1px solid $border-color;
+}
+
+.#{$namespace}-datepicker-footer {
+  padding: 6px 8px;
+  text-align: right;
+  border-top: 1px solid $border-color;
+}
+
+.#{$namespace}-calendar {
+  box-sizing: border-box;
+  width: 248px;
+  padding: 6px 12px;
+
+  &+& {
+    border-left: 1px solid $border-color;
+  }
+}
+
+.#{$namespace}-calendar-header {
+  box-sizing: border-box;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.#{$namespace}-btn-icon-left,
+.#{$namespace}-btn-icon-double-left {
+  float: left;
+}
+
+.#{$namespace}-btn-icon-right,
+.#{$namespace}-btn-icon-double-right {
+  float: right;
+}
+
+.#{$namespace}-calendar-header-label {
+  font-size: 14px;
+}
+
+.#{$namespace}-calendar-decade-separator {
+  margin: 0 2px;
+
+  &:after {
+    content: '~';
+  }
+}
+
+.#{$namespace}-calendar-content {
+  position: relative;
+  height: 224px;
+  box-sizing: border-box;
+
+  .cell {
+    cursor: pointer;
+
+    &:hover {
+      color: $calendar-hover-color;
+      background-color: $calendar-hover-background-color;
+    }
+
+    &.active {
+      color: $calendar-active-color;
+      background-color: $calendar-active-background-color;
+    }
+
+    &.in-range,
+    &.hover-in-range {
+      color: $calendar-in-range-color;
+      background-color: $calendar-in-range-background-color;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: $disabled-color;
+      background-color: $disabled-background-color;
+    }
+  }
+}
+
+.#{$namespace}-calendar-week-mode {
+  .#{$namespace}-date-row {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $calendar-hover-background-color;
+    }
+
+    &.#{$namespace}-active-week {
+      background-color: $calendar-in-range-background-color;
+    }
+
+    .cell {
+      &:hover {
+        color: inherit;
+        background-color: transparent;
+      }
+
+      &.active {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.#{$namespace}-week-number {
+  opacity: 0.5;
+}
+
+.#{$namespace}-table {
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+
+  th {
+    padding: 0;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  td {
+    padding: 0;
+    vertical-align: middle;
+  }
+}
+
+.#{$namespace}-table-date {
+
+  td,
+  th {
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .today {
+    color: $today-color;
+  }
+
+  .cell.not-current-month {
+    color: #ccc;
+    background: none; // cover the in-range style
+  }
+}
+
+.#{$namespace}-time {
+  flex: 1;
+  width: 224px;
+  background: #fff;
+
+  &+& {
+    border-left: 1px solid $border-color;
+  }
+}
+
+.#{$namespace}-calendar-time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.#{$namespace}-time-header {
+  @extend .#{$namespace}-calendar-header;
+  border-bottom: 1px solid $border-color;
+}
+
+.#{$namespace}-time-content {
+  height: 224px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.#{$namespace}-time-columns {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.#{$namespace}-time-column {
+  flex: 1;
+  position: relative;
+  border-left: 1px solid $border-color;
+  text-align: center;
+
+  &:first-child {
+    border-left: 0;
+  }
+
+  .#{$namespace}-time-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 32 * 6px;
+    }
+  }
+
+  .#{$namespace}-time-item {
+    cursor: pointer;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+
+    &:hover {
+      color: $time-hover-color;
+      background-color: $time-hover-background-color;
+    }
+
+    &.active {
+      color: $time-active-color;
+      background-color: $time-active-background-color;
+      font-weight: 700;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      color: $disabled-color;
+      background-color: $disabled-background-color;
+    }
+  }
+}
+
+.#{$namespace}-time-option {
+  cursor: pointer;
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 20px;
+
+  &:hover {
+    color: $time-hover-color;
+    background-color: $time-hover-background-color;
+  }
+
+  &.active {
+    color: $time-active-color;
+    background-color: $time-active-background-color;
+    font-weight: 700;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    color: $disabled-color;
+    background-color: $disabled-background-color;
+  }
+}
+
+
+// Кастомные стили для датапикера
+
+// Общее
+.#{$namespace}-datepicker-main {
+  font-family: 'HeliosC', Arial, Helvetica, sans-serif;
+  color: var(--gray900);
+}
+
+.#{$namespace}-datepicker-popup {
+  box-shadow: none;
+  border: 2px solid var(--red500)
+}
+
+.#{$namespace}-calendar-header {
+  border-bottom: 2px solid var(--red300);
+  margin-bottom: 8px;
+  height: 42px;
+}
+
+// Выбор месяца
+.#{$namespace}-calendar-panel-month {
+  .#{$namespace}-calendar-header {
+    display: flex;
+  }
+
+  .#{$namespace}-btn-icon-double-left {
+    order: 1
+  }
+
+  .#{$namespace}-calendar-header-label {
+    order: 2;
+    flex: 1
+  }
+
+  .#{$namespace}-btn-icon-double-right {
+    order: 3
+  }
+}
+
+// Кнопки переключения месяцев
+.#{$namespace}-calendar-panel-date {
+  .#{$namespace}-btn-icon-double-left {
+    position: absolute;
+    right: 80px
+  }
+
+  .#{$namespace}-btn-icon-double-right {
+    position: absolute;
+    right: 20px;
+  }
+
+  .#{$namespace}-btn-icon-left {
+    position: absolute;
+    left: 10px;
+  }
+
+  .#{$namespace}-btn-icon-right {
+    position: absolute;
+    left: 80px;
+  }
+
+  .#{$namespace}-btn-current-month {
+    position: absolute;
+    left: 38px;
+    padding-top: 2px;
+  }
+
+  .#{$namespace}-btn-current-year {
+    position: absolute;
+    right: 41px;
+    padding-top: 1px;
+  }
+}
+
+// открытые панели месяц/год
+.#{$namespace}-calendar-panel-year {
+  .#{$namespace}-calendar-content .cell.active {
+    background-color: var(--red900);
+  }
+
+  .#{$namespace}-btn-icon-double-left {
+    right: 199px;
+  }
+
+  .#{$namespace}-btn-icon-double-right {
+    right: 75px;
+  }
+}
+
+.#{$namespace}-calendar-panel-month {
+  .#{$namespace}-calendar-content .cell.active {
+    background-color: var(--red900);
+  }
+
+  .#{$namespace}-btn-icon-double-left {
+    right: 170px;
+  }
+
+  .#{$namespace}-btn-icon-double-right {
+    right: 104px;
+  }
+}
+
+
+// Шрифты
+.#{$namespace}-table-date td,
+.#{$namespace}-table-date th {
+  font-size: 14px;
+}
+
+.#{$namespace}-calendar-header-label .#{$namespace}-btn-text {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--gray900);
+  font-size: 13px;
+}
+
+.#{$namespace}-btn-current-year {
+  font-size: 14px;
+}
+
+// Таблица
+.#{$namespace}-table-date th {
+  color: var(--gray700);
+  font-weight: bold;
+}
+
+.#{$namespace}-calendar-content .cell:hover {
+  color: var(--red900);
+  background-color: var(--red300);
+}
+
+.#{$namespace}-table-date .cell.not-current-month {
+  color: var(--gray500);
+}
+
+.#{$namespace}-table-date .today {
+  color: var(--red900)
+}
+
+// Икноки для стрелок
+.#{$namespace}-icon-left {
+  width: 20px;
+  height: 20px;
+}
+
+.#{$namespace}-icon-left:before,
+.#{$namespace}-icon-right:before,
+.#{$namespace}-icon-double-left:before,
+.#{$namespace}-icon-double-right:before {
+  content: '';
+  position: relative;
+  top: 0px;
+  border-color: none;
+  border-width: 0;
+  border-radius: 0;
+  transform: none;
+  width: 20px;
+  height: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.#{$namespace}-icon-right:before,
+.#{$namespace}-icon-double-right:before {
+  transform: scale(-1, -1);
+}
+
+.#{$namespace}-icon-left:before,
+.#{$namespace}-icon-right:before,
+.#{$namespace}-icon-double-left:before,
+.#{$namespace}-icon-double-right:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='14' viewBox='0 0 8 14' fill='none'%3E%3Cpath d='M7 13L1 7L7 1' stroke='%23AB052D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.#{$namespace}-icon-double-left:after,
+.#{$namespace}-icon-double-right:after {
+  display: none;
+}

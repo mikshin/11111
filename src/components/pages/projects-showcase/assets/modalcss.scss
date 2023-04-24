@@ -1,0 +1,136 @@
+.add-task {
+  &__conent {}
+}
+
+.add-key-point {
+  margin-top: var(--v-rhythm-2);
+  margin-bottom: var(--v-rhythm-5);
+}
+
+.add-participant {
+  margin-top: var(--v-rhythm-2);
+}
+
+.caption,
+.caption-key-point {
+  @extend .caption-2;
+  margin-bottom: var(--v-rhythm-3);
+}
+
+.caption-key-point {
+  margin-top: var(--v-rhythm-5);
+  color: var(--gray500);
+}
+
+.input_container-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+
+  &--initial {
+    .delete {
+      display: none;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var(--v-rhythm-4);
+  }
+
+  &> :first-child {
+    flex-basis: calc(50% - 10px);
+  }
+
+  &> :nth-child(2) {
+    flex-basis: calc(50% - 10px);
+    margin-top: 0;
+  }
+
+  .delete {
+    position: absolute;
+    top: 17px;
+    // transform: translateY(-50%);
+    right: -35px;
+    fill: var(--gray500);
+    transition: fill 0.3s;
+
+    &:hover {
+      fill: var(--red700);
+    }
+  }
+
+  .delete.hide {
+    display: none;
+  }
+}
+
+.add-project {
+  &__title {
+    margin-bottom: var(--v-rhythm-8);
+
+    @extend .h3;
+    color: var(--gray900);
+  }
+
+  &__form {}
+
+  &__form-input-date {
+    width: 273px;
+  }
+
+  &__files {
+    margin: var(--v-rhythm-6) 0;
+  }
+
+  &__creator {
+    margin: var(--v-rhythm-6) 0;
+  }
+
+  &__creator-title {
+    padding: var(--v-rhythm-1) 0;
+    margin-bottom: var(--v-rhythm-2);
+
+    @extend .caption-2;
+    color: var(--gray500);
+  }
+
+  &__form-btns {
+    margin-top: var(--v-rhythm-8);
+
+    display: flex;
+    gap: var(--v-rhythm-4);
+  }
+
+  @include phones {
+    &__form-input-date {
+      width: 100%;
+    }
+  }
+}
+
+.task-editing__files {
+  margin-bottom: 16px;
+}
+
+.devider {
+  height: 1px;
+  background-color: var(--gray300);
+  margin-top: var(--v-rhythm-6);
+  margin-bottom: var(--v-rhythm-5);
+}
+
+.date-errors {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  order: 10;
+  padding-top: 20px;
+
+  .error {
+    color: var(--red900);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+  }
+}

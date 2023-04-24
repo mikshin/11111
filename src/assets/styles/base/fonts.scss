@@ -1,0 +1,100 @@
+$fontsExtensions: "woff2",
+"woff";
+
+// **************************
+// *** HeliosC ***
+// **************************
+$InterPath: "~@/assets/fonts";
+$Inter: "HeliosC";
+
+@include font-face($Inter, "#{$InterPath}/HeliosThinC", 100, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosLightC", 300, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosC", 400, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosC-Bold", 700, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosBlackC", 900, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosC-Italic ***
+// **************************
+
+$InterPath: "~@/assets/fonts";
+$Inter: "HeliosC-Italic";
+@include font-face($Inter, "#{$InterPath}/HeliosThinC-Italic", 100, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosLightC-Italic", 300, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosC-Italic", 400, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosC-BoldItalic", 700, normal, $fontsExtensions);
+@include font-face($Inter, "#{$InterPath}/HeliosBlackC-Italic", 900, normal, $fontsExtensions);
+
+// ************************** Шрифты ниже не используются, расскоментировать по надобности **************************
+
+// **************************
+// *** HeliosCondC ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosCondC";
+// @include font-face($Inter, "#{$InterPath}/HeliosCondThinC", 100, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondLightC", 300, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondC", 400, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondC-Bold", 700, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondBlackC", 900, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosCondC-Italic ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosCondC-Italic";
+// @include font-face($Inter, "#{$InterPath}/HeliosCondThinC-Italic", 100, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondLightC-Italic", 300, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondC-Italic", 400, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondC-BoldItalic", 700, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosCondBlackC-Italic", 900, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosExtC ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosExtC";
+// @include font-face($Inter, "#{$InterPath}/HeliosExtThinC", 100, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtLightC", 300, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtC", 400, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtC-Bold", 700, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtBlackC", 900, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosExtC-Italic ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosExtC-Italic";
+// @include font-face($Inter, "#{$InterPath}/HeliosExtThinC-Italic", 100, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtLightC-Italic", 300, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtC-Italic", 400, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtC-BoldItalic", 700, normal, $fontsExtensions);
+// @include font-face($Inter, "#{$InterPath}/HeliosExtBlackC-Italic", 900, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosCompressedC ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosCompressedC";
+// @include font-face($Inter, "#{$InterPath}/HeliosCompressedC", 400, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosUltraCompressedC ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosUltraCompressedC";
+// @include font-face($Inter, "#{$InterPath}/HeliosUltraCompressedC", 400, normal, $fontsExtensions);
+
+// **************************
+// *** HeliosExtraCompressedC ***
+// **************************
+
+// $InterPath: "~@/assets/fonts";
+// $Inter: "HeliosExtraCompressedC";
+// @include font-face($Inter, "#{$InterPath}/HeliosExtraCompressedC", 400, normal, $fontsExtensions);

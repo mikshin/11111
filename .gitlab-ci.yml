@@ -1,0 +1,60 @@
+# build site:
+#   image: node:6
+#   stage: build
+#   script:
+#     - npm ci --progress=false
+#     - npm run build
+#   artifacts:
+#     expire_in: 1 week
+#     paths:
+#       - dist
+
+# unit test:
+#   image: node:6
+#   stage: test
+#   script:
+#     - npm ci --progress=false
+#     - npm run test
+stages:
+  - deploy_test
+  - deploy_pred
+  - e2e_tests
+
+variables:
+  GIT_STRATEGY: clone
+
+deploy_test:
+  stage: deploy_test
+  script:
+    - cd /mnt/u01/test.naftgaz.hopper-it.ru/front
+    - git reset --hard
+    - git pull origin develop
+    - npm i
+    - npm run build
+  rules:
+    - if: '$CI_COMMIT_REF_NAME =~ /develop/'
+  tags:
+    - naftgaz-test
+  
+deploy_pred:
+  stage: deploy_pred
+  script:
+    - cd /mnt/u01/present.naftgaz.hopper-it.ru/front
+    - git reset --hard
+    - git pull origin release
+    - npm i
+    - npm run build
+  rules:
+    - if: '$CI_COMMIT_REF_NAME =~ /release/'
+  tags:
+    - present-nafta
+
+e2eTests:
+  stage: e2e_tests
+  script:
+    - curl -X POST -F token=0c6c180a9058eafca606b045304abe -F "ref=master" -F "variables[DEV_BRANCH]=${CI_COMMIT_REF_NAME}" https://gitlab.hopper-it.ru/api/v4/projects/185/trigger/pipeline
+
+  rules:
+    - if: '$CI_COMMIT_REF_NAME =~ /develop/'
+  tags:
+    - naftgaz-test

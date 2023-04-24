@@ -1,0 +1,16 @@
+//Подключается глобально через globalStyle.scss
+
+// Обнуляем стандартные стили
+.tippy-tooltip {
+  padding: unset;
+
+  color: inherit;
+  font-size: unset;
+  line-height: unset;
+  text-align: unset;
+
+  box-shadow: var(--boxShadowList) !important;
+  //border: 1px solid var(--gray300);
+  border: none;
+  border-radius: unset;
+}

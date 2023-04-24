@@ -1,0 +1,12 @@
+<svg width='400' height='400' fill='none' xmlns='http://www.w3.org/2000/svg'>
+	<g clip-path='url(#clip0_2251_25451)'>
+		<rect width='400' height='400' fill='#FFA5AC' />
+		<circle cx='200' cy='137.5' r='76.5625' fill='#FFF7F9' />
+		<circle cx='201.562' cy='435.938' r='198.438' fill='#FFF7F9' />
+	</g>
+	<defs>
+		<clipPath id='clip0_2251_25451'>
+			<rect width='400' height='400' fill='white' />
+		</clipPath>
+	</defs>
+</svg>

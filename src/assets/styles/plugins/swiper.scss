@@ -1,0 +1,21 @@
+.swiper-pagination-bullets {
+  display: flex;
+  justify-content: center;
+  gap: var(--v-rhythm-2);
+
+  .swiper-pagination-bullet {
+    margin: 0;
+
+    background-color: var(--gray500);
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active {
+      background-color: var(--red900);
+    }
+  }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}

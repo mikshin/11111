@@ -1,0 +1,122 @@
+{
+  "Vertical rhythm css variable": {
+    "prefix": "rhyt",
+    "body": ["var(--v-rhythm-$1)"]
+  },
+  "Add padding": {
+    "prefix": "mix-padding",
+    "body": [
+      "padding: {",
+      "   top: $1;",
+      "   right: $2;",
+      "   bottom: $3;",
+      "   left: $4;",
+      "}"
+    ]
+  },
+  "Add margin": {
+    "prefix": "mix-margin",
+    "body": [
+      "margin: {",
+      "   top: $1;",
+      "   right: $2;",
+      "   bottom: $3;",
+      "   left: $4;",
+      "}"
+    ]
+  },
+  "Add shedow-border": {
+    "prefix": "mix-sh-bor",
+    "body": ["@include box-sh($1, $2);"]
+  },
+  "Media desktop": {
+    "prefix": "mix-desktop",
+    "body": ["@include desktop {", "  $1", "}"]
+  },
+  "Media laptop": {
+    "prefix": "mix-laptop",
+    "body": ["@include laptop {", "  $1", "}"]
+  },
+  "Media phones": {
+    "prefix": "mix-phones",
+    "body": ["@include phones {", "  $1", "}"]
+  },
+  "Media hover": {
+    "prefix": "mix-hover",
+    "body": ["@include hover {", "  $1", "}"]
+  },
+  "Media no-hover": {
+    "prefix": "mix-no-hover",
+    "body": ["@include no-hover {", "  $1", "}"]
+  },
+  "Media font": {
+    "prefix": "mix-font",
+    "body": ["@include font($1)"]
+  },
+  "Media transition": {
+    "prefix": "mix-transition",
+    "body": ["@include transition($1);"]
+  },
+  "Color red": {
+    "prefix": "--red",
+    "body": ["var(--red$1)"]
+  },
+  "Color gray": {
+    "prefix": "--gray",
+    "body": ["var(--gray$1)"]
+  },
+  "Color white": {
+    "prefix": "--white",
+    "body": ["var(--white$1)"]
+  },
+  "Color green": {
+    "prefix": "--green",
+    "body": ["var(--green$1)"]
+  },
+  "Active opacity": {
+    "prefix": "--opacity",
+    "body": ["var(--active-opacity)"]
+  },
+  "Template component": {
+    "prefix": "mix-component",
+    "body": [
+      "<template>",
+      "  <div class=\"\"></div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "  name: \"$1\",",
+      "",
+      "  components: {},",
+      "",
+      "  props: {",
+      "    // some: {",
+      "    //   type: String,",
+      "    //   required: false,",
+      "    //   default: \"\",",
+      "    // },",
+      "  },",
+      "",
+      "  data() {",
+      "    return {};",
+      "  },",
+      "",
+      "  computed: {},",
+      "",
+      "  methods: {},",
+      "",
+      "  watch: {},",
+      "",
+      "  mounted() {},",
+      "};",
+      "</script>",
+      "",
+      "<style scoped lang=\"scss\"></style>"
+    ]
+  },
+  "Extend": {
+    "prefix": "@extend",
+    "body": ["@extend $1;"]
+  }
+}

@@ -1,0 +1,17 @@
+body {
+  font-family: 'HeliosC', Arial, Helvetica, sans-serif;
+  color: var(--gray900);
+  @extend .body-1;
+
+  background-color: var(--gray100);
+
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  overscroll-behavior-y: contain;
+  // убирает горизонтальный скролл, который появляеться на странице поиска из-за псевдоэлементов before, у которых размер 100vw
+  overflow-x: hidden;
+
+  // Улучшаем рендеринг шрифтов на маках
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

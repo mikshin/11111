@@ -1,0 +1,40 @@
+:root {
+  // *** Размеры ***
+  --maxWidthContainer: 1440px;
+  --mainPadding: 32px;
+  --negativeMainPadding: calc(-1 * var(--mainPadding));
+
+  @include desktop {
+    --mainPadding: 20px;
+  }
+
+  @include laptop {
+    --mainPadding: 16px;
+  }
+
+  @include phones {
+    --mainPadding: 10px;
+  }
+
+  --headerHeight: 70px;
+
+  --main-gap: var(--v-rhythm-8);
+
+  // *** Индексы ***
+  // что бы перекрыть тултипы
+  --header: 10000;
+  --modal: 60;
+  --search: 50;
+  --notifications: 50;
+
+  // *** Вертикальный ритм ***
+  --v-rhythm-base: 4px;
+
+  // формула для вертикального ритма от 0 до 20. Если нужно не целое число, то используйте формулу calc(var(--v-rhythm-1) * 0.5)
+  @for $i from 0 to 21 {
+    --v-rhythm-#{$i}: calc(var(--v-rhythm-base) * #{$i});
+  }
+
+  // *** Свойства клика ***
+  --active-opacity: .7;
+}

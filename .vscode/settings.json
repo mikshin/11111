@@ -1,0 +1,46 @@
+{
+  "editor.renderControlCharacters": true,
+  "editor.detectIndentation": false,
+  "editor.mouseWheelZoom": true,
+  "workbench.editor.closeEmptyGroups": false,
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "explorer.confirmDelete": false,
+  "terminal.integrated.automationShell.osx": "",
+  "terminal.integrated.automationShell.linux": "",
+  "terminal.integrated.automationShell.windows": "",
+  "vscodeGoogleTranslate.HoverTranslations": false,
+  "emmet.triggerExpansionOnTab": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "mohd-akram.vscode-html-format"
+  },
+  "workbench.colorCustomizations": {
+    "[Material Theme Palenight High Contrast]": {}
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 3,
+  "terminal.integrated.enablePersistentSessions": false,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.tabSize": 2,
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
