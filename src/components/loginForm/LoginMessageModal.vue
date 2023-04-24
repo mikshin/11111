@@ -9,17 +9,12 @@
       <p class="message-login-popup__paragraph" v-html="text"></p>
       <template v-if="type === 'fogotPass'">
         <p
-          class="
-            message-login-popup__contact-label
-            message-login-popup__contact-label_first
-          "
+          class="message-login-popup__contact-label message-login-popup__contact-label_first"
         >
           E-mail
         </p>
-        <a
-          href="mailto:portal@naftagaz.com"
-          class="message-login-popup__contact"
-          >portal@naftagaz.com</a
+        <a href="mailto:111.com" class="message-login-popup__contact"
+          >111.com</a
         >
         <p class="message-login-popup__contact-label">Внутренний телефон</p>
         <a href="tel:+74955891200" class="message-login-popup__contact"

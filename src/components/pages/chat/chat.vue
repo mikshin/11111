@@ -198,9 +198,7 @@ export default {
     updateChatAfterMessage() {
       axios
         .get(
-          "/mobileapp/api/chat/?count=20&startFrom=" +
-            this.contactsFrom +
-            "&"
+          "/mobileapp/api/chat/?count=20&startFrom=" + this.contactsFrom + "&"
         )
         .then((response) => {
           if (response.data.data) {
@@ -213,8 +211,10 @@ export default {
             this.findChatInChatList();
           }
         })
-        .finally(()=>{
-          this.$el.querySelector(".chat__contacts .contact__wrapper:first-child").scrollIntoView({ behavior: "smooth", block: "center" });
+        .finally(() => {
+          this.$el
+            .querySelector(".chat__contacts .contact__wrapper:first-child")
+            .scrollIntoView({ behavior: "smooth", block: "center" });
         });
     },
     updateDialog(count = 20) {
@@ -264,7 +264,7 @@ export default {
     updateSendedMessage() {
       this.dialogPosition = 0;
       this.updateLastMessage();
-      this.updateChatAfterMessage()
+      this.updateChatAfterMessage();
     },
     addnewChat() {
       // for (let i in this.chatList) {
@@ -278,9 +278,7 @@ export default {
       // TODO: Переделать логику сокетов
       let socket = new WebSocket(
         "wss://" +
-          (window.location.hostname === "localhost"
-            ? "test.naftgaz.hopper-it.ru"
-            : window.location.hostname) +
+          (window.location.hostname === window.location.hostname) +
           "/wss/?user=" +
           JSON.parse(localStorage.currentUser).ID
       );

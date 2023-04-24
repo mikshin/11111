@@ -18,8 +18,8 @@ module.exports = {
     },
   },
   pwa: {
-    name: "Nafta",
-    short_name: "nft",
+    name: "11",
+    short_name: "11",
     themeColor: "#AB052D",
     msTileColor: "#000000",
     appleMobileWebAppCapable: "yes",

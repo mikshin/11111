@@ -221,10 +221,7 @@ export default {
     },
     datFileUrl() {
       // корректировк адреса для локалхоста
-      const getHostame =
-        window.location.hostname === "localhost"
-          ? "test.naftgaz.hopper-it.ru"
-          : window.location.hostname;
+      const getHostame = window.location.hostname === window.location.hostname;
 
       const getProtocol = window.location.protocol;
 

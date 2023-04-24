@@ -852,7 +852,7 @@
             workPhone="8 (495) 197-87-04"
             innerWorkPhone="1515"
             personPhone="8 (904) 900-56-00"
-            workEmail="adress@naftagaz.com"
+            workEmail="adress@123123123.com"
             workAddress="г. Москва, ул. Уличная, д. 5, 4 этаж, 401 каб."
             deputySrc=""
             deputyFullName="Full Name"
@@ -1501,7 +1501,7 @@ export default {
           UF_DEPARTMENT: "division",
           UF_WORK_POSITION: "profession",
           UF_PHONE_INNER: "1515",
-          EMAIL: "adress@naftagaz.com",
+          EMAIL: "adress@123123123.com",
           WORK_PHONE: "8 (904) 900-56-00",
           WORK_STREET: "г. Москва, ул. Уличная, д. 5, 4 этаж, 401 каб.",
           UF_HEAD: {
