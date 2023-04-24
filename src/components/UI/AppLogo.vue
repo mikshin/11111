@@ -1,6 +1,6 @@
 <template>
   <router-link class="app-logo" to="/">
-    <img class="app-logo__img" src="~@/assets/images/logo.svg" alt="Нафтагаз" />
+    <img class="app-logo__img" src="~@/assets/images/logo.svg" alt="" />
   </router-link>
 </template>
 

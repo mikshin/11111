@@ -82,7 +82,6 @@
           :socialMediaData="socialListFiltered"
           :iconSize="40"
         />
-        <div class="app-footer__copyright">© АО «НафтаГаз», 2022</div>
       </div>
     </div>
   </footer>

@@ -65,7 +65,7 @@ export default {
           searchable: false,
           selectValue: [
             {
-              label: "АО «НафтаГаз»",
+              label: "123123",
               code: "ZUP_NG",
             },
             {
