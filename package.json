@@ -31,7 +31,7 @@
     "vue-resize-directive": "^1.2.0",
     "vue-router": "^3.2.0",
     "vue-scrollto": "^2.20.0",
-    "vue-select": "^3.16.0",
+    "vue-select": "^3.20.2",
     "vue-tippy": "^4.13.0",
     "vue2-datepicker": "^3.10.4",
     "vue2-editor": "^2.10.3",
