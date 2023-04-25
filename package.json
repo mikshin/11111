@@ -29,7 +29,7 @@
     "vue-json-excel": "^0.3.0",
     "vue-r-mask": "^1.2.3",
     "vue-resize-directive": "^1.2.0",
-    "vue-router": "^3.2.0",
+    "vue-router": "^3.6.5",
     "vue-scrollto": "^2.20.0",
     "vue-select": "^3.16.0",
     "vue-tippy": "^4.13.0",
